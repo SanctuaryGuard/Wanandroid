@@ -21,6 +21,6 @@ public class GlideUtil {
     }
 
     public void displayImage(Context context, String url, ImageView view) {
-        Glide.with(context).load(url).into(view);
+        Glide.with(context).load(url).dontAnimate().into(view);
     }
 }

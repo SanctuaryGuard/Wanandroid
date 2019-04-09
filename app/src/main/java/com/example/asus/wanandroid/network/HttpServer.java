@@ -1,15 +1,12 @@
 package com.example.asus.wanandroid.network;
 
 import com.example.asus.wanandroid.network.api.ApiServer;
-import com.example.asus.wanandroid.network.bean.home.article.ArticleListBean;
+import com.example.asus.wanandroid.network.bean.architecture.article.ArchitectureArticle;
+import com.example.asus.wanandroid.network.bean.architecture.group.ArchitectureGroup;
 import com.example.asus.wanandroid.network.bean.home.article.HomeArticle;
-import com.example.asus.wanandroid.network.bean.home.article.HomeArticleData;
 import com.example.asus.wanandroid.network.bean.home.article.HomeArticleTop;
 import com.example.asus.wanandroid.network.bean.home.banner.HomeBanner;
-import com.example.asus.wanandroid.network.bean.home.banner.HomeBannerData;
 
-
-import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.Retrofit;
@@ -56,5 +53,15 @@ public class HttpServer {
     //获取首页置顶Article数据
     public Observable<HomeArticleTop> getHomeArticleTopData() {
         return mApiServer.getHomeArticleTopData();
+    }
+
+    //获取知识体系分类
+    public Observable<ArchitectureGroup> getArchitectureGroupData() {
+        return mApiServer.getArchitectureGroupdata();
+    }
+
+    //获取知识体系下的文章
+    public Observable<ArchitectureArticle> getArchitectureArticleData(int pageNum, int cid) {
+        return mApiServer.getArchitectureArticleData(pageNum, cid);
     }
 }

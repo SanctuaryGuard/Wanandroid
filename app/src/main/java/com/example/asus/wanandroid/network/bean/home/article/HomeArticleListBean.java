@@ -28,7 +28,7 @@ import java.util.List;
  * "visible":1,
  * "zan":0}
  */
-public class ArticleListBean {
+public class HomeArticleListBean {
     private String apkLink;
     private String author;
     private int chapterId;
@@ -46,7 +46,7 @@ public class ArticleListBean {
     private long publishTime;
     private int superChapterId;
     private String superChapterName;
-    private List<ArticleTag> tags;
+    private List<HomeArticleTag> tags;
     private String title;
     private int type;
     private int userId;
@@ -189,11 +189,11 @@ public class ArticleListBean {
         this.superChapterName = superChapterName;
     }
 
-    public List<ArticleTag> getTags() {
+    public List<HomeArticleTag> getTags() {
         return tags;
     }
 
-    public void setTags(List<ArticleTag> tags) {
+    public void setTags(List<HomeArticleTag> tags) {
         this.tags = tags;
     }
 

@@ -1,6 +1,6 @@
 package com.example.asus.wanandroid.network.bean.home.article;
 
-public class ArticleTag {
+public class HomeArticleTag {
     private String name;
     private String url;
 

@@ -1,11 +1,11 @@
-package com.example.asus.wanandroid.network.bean.home.article;
+package com.example.asus.wanandroid.network.bean.architecture.article;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeArticleData {
+public class ArchitectureArticleData {
     private int curPage;
-    private List<HomeArticleListBean> datas = new ArrayList<HomeArticleListBean>();
+    private List<ArchitectureArticleListBean> datas = new ArrayList<ArchitectureArticleListBean>();
     private int offset;
     private boolean over;
     private int pageCount;
@@ -20,11 +20,11 @@ public class HomeArticleData {
         this.curPage = curPage;
     }
 
-    public List<HomeArticleListBean> getDatas() {
+    public List<ArchitectureArticleListBean> getDatas() {
         return datas;
     }
 
-    public void setDatas(List<HomeArticleListBean> datas) {
+    public void setDatas(List<ArchitectureArticleListBean> datas) {
         this.datas = datas;
     }
 
