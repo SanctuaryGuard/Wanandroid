@@ -1,5 +1,7 @@
 package com.example.asus.wanandroid.network.bean.home.article;
 
+import com.example.asus.wanandroid.base.BaseBean;
+
 import java.util.List;
 
 /**
@@ -28,7 +30,7 @@ import java.util.List;
  * "visible":1,
  * "zan":0}
  */
-public class HomeArticleListBean {
+public class HomeArticleListBean extends BaseBean {
     private String apkLink;
     private String author;
     private int chapterId;

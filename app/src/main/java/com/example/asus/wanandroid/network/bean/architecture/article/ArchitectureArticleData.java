@@ -1,9 +1,11 @@
 package com.example.asus.wanandroid.network.bean.architecture.article;
 
+import com.example.asus.wanandroid.base.BaseBean;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArchitectureArticleData {
+public class ArchitectureArticleData extends BaseBean {
     private int curPage;
     private List<ArchitectureArticleListBean> datas = new ArrayList<ArchitectureArticleListBean>();
     private int offset;

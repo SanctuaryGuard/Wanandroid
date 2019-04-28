@@ -1,6 +1,8 @@
 package com.example.asus.wanandroid.network.bean.project.article;
 
-public class ProjectTag {
+import com.example.asus.wanandroid.base.BaseBean;
+
+public class ProjectTag extends BaseBean {
     private String name;
     private String url;
 

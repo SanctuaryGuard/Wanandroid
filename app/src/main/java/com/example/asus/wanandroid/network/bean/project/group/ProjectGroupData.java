@@ -1,8 +1,10 @@
 package com.example.asus.wanandroid.network.bean.project.group;
 
+import com.example.asus.wanandroid.base.BaseBean;
+
 import java.util.List;
 
-public class ProjectGroupData {
+public class ProjectGroupData extends BaseBean {
     private List<ProjectChildren> children;
     private int courseId;
     private int id;

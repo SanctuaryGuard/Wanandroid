@@ -1,8 +1,10 @@
 package com.example.asus.wanandroid.network.bean.project.article;
 
+import com.example.asus.wanandroid.base.BaseBean;
+
 import java.util.List;
 
-public class ProjectArticleListBean {
+public class ProjectArticleListBean extends BaseBean {
     private String apkLink;
     private String author;
     private int chapterId;

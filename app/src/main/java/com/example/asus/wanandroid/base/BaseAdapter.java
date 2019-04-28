@@ -8,28 +8,25 @@ import android.view.ViewGroup;
 
 import com.example.asus.wanandroid.R;
 
-public class BaseAdapter extends RecyclerView.Adapter<BaseAdapter.ViewHolder> {
+import butterknife.ButterKnife;
 
+public abstract class BaseAdapter<V extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<BaseAdapter.ViewHolder> {
 
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return null;
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-
-    }
-
-    @Override
-    public int getItemCount() {
-        return 0;
-    }
+    public OnItemClickListener mOnItemClickListener;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            ButterKnife.bind(this, itemView);
         }
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+        void onItemLongClick(View view, int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        mOnItemClickListener = onItemClickListener;
     }
 }

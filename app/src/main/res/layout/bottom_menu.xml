@@ -8,34 +8,28 @@
 
     <RadioButton
         android:id="@+id/home_radio"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@mipmap/ic_launcher"
-        android:paddingTop="2dp"/>
+        android:drawableTop="@drawable/menu_home_"
+        android:text="首页"
+        style="@style/BaseRadioBtn"/>
     <RadioButton
         android:id="@+id/architecture_radio"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@mipmap/ic_launcher"
-        android:paddingTop="2dp"/>
+        android:drawableTop="@drawable/menu_knowledge_hierarchy"
+        android:text="体系"
+        style="@style/BaseRadioBtn"/>
     <RadioButton
         android:id="@+id/project_radio"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@mipmap/ic_launcher"
-        android:paddingTop="2dp"/>
+        android:drawableTop="@drawable/menu_project"
+        android:text="项目"
+        style="@style/BaseRadioBtn"/>
     <RadioButton
         android:id="@+id/public_number_radio"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@mipmap/ic_launcher"
-        android:paddingTop="2dp"/>
+        android:drawableTop="@drawable/menu_wechat_sub"
+        android:text="公众号"
+        style="@style/BaseRadioBtn"/>
+    <RadioButton
+        android:id="@+id/me_radio"
+        android:drawableTop="@drawable/menu_me"
+        android:text="我的"
+        style="@style/BaseRadioBtn"/>
+
 </RadioGroup>

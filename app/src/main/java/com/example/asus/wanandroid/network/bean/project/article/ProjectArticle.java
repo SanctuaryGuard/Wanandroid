@@ -1,17 +1,19 @@
 package com.example.asus.wanandroid.network.bean.project.article;
 
+import com.example.asus.wanandroid.base.BaseBean;
+
 import java.util.List;
 
-public class ProjectArticle {
-    private List<ProjectArticleData> data;
+public class ProjectArticle extends BaseBean {
+    private ProjectArticleData data;
     private int errorCode;
     private String errorMsg;
 
-    public List<ProjectArticleData> getData() {
+    public ProjectArticleData getData() {
         return data;
     }
 
-    public void setData(List<ProjectArticleData> data) {
+    public void setData(ProjectArticleData data) {
         this.data = data;
     }
 

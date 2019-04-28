@@ -3,13 +3,12 @@ package com.example.asus.wanandroid.ui.fragment.home;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
 
 import com.example.asus.wanandroid.R;
 import com.example.asus.wanandroid.WanandroidApplication;
-import com.example.asus.wanandroid.adapter.ArticleAdapter;
+import com.example.asus.wanandroid.adapter.HomeArticleAdapter;
 import com.example.asus.wanandroid.base.MVPFragment;
 import com.example.asus.wanandroid.network.bean.home.article.HomeArticleListBean;
 import com.example.asus.wanandroid.network.bean.home.article.HomeArticle;
@@ -25,7 +24,6 @@ import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
@@ -39,7 +37,7 @@ public class HomeFragment extends MVPFragment<HomePresenter> implements HomeCont
     private int mTotalPage = 0;
     private int mCurrentPage = 0;
 
-    private ArticleAdapter mArticleAdapter;
+    private HomeArticleAdapter mArticleAdapter;
     private Banner mHomeBanner;
 
     @BindView(R.id.home_recycler_view)
@@ -121,7 +119,7 @@ public class HomeFragment extends MVPFragment<HomePresenter> implements HomeCont
                 .setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE)
                 .start();
 
-        mArticleAdapter = new ArticleAdapter(getContext(), mArticleListBeans);
+        mArticleAdapter = new HomeArticleAdapter(getContext(), mArticleListBeans);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(WanandroidApplication.getApplication());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -139,15 +137,15 @@ public class HomeFragment extends MVPFragment<HomePresenter> implements HomeCont
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 if (mCurrentPage + 1 < mTotalPage) {
-                    presenter.getArticleData(mCurrentPage + 1);
+                    presenter.getArticleData(mCurrentPage);
                     refreshLayout.finishLoadMore(3000);
                     mArticleAdapter.notifyDataSetChanged();
                 } else if (mCurrentPage + 1 == mTotalPage) {
-                    presenter.getArticleData(mCurrentPage + 1);
+                    presenter.getArticleData(mCurrentPage);
                     refreshLayout.finishLoadMoreWithNoMoreData();
                     mArticleAdapter.notifyDataSetChanged();
                 } else {
-                    refreshLayout.finishLoadMore(2000, false, true);
+                    refreshLayout.finishLoadMoreWithNoMoreData();
                 }
             }
 

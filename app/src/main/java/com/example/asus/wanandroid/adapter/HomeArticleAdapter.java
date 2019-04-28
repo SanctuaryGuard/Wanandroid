@@ -8,16 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.asus.wanandroid.R;
-import com.example.asus.wanandroid.network.bean.home.article.HomeArticle;
+import com.example.asus.wanandroid.base.BaseAdapter;
 import com.example.asus.wanandroid.network.bean.home.article.HomeArticleListBean;
-import com.example.asus.wanandroid.network.bean.home.banner.HomeBannerData;
-import com.example.asus.wanandroid.ui.fragment.home.HomeBannerLoader;
 import com.example.asus.wanandroid.utils.GlideUtil;
-import com.youth.banner.Banner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +21,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ArticleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class HomeArticleAdapter extends BaseAdapter<BaseAdapter.ViewHolder> {
 
     private List<HomeArticleListBean> mArticleListBeans = new ArrayList<HomeArticleListBean>();
     private View mHeaderView;
@@ -34,7 +30,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private int ITEM_TYPE_HEADER = -1;
     private int ITEM_TYPE_FOOTER = -2;
 
-    public ArticleAdapter(Context context, List<HomeArticleListBean> articleListBeans) {
+    public HomeArticleAdapter(Context context, List<HomeArticleListBean> articleListBeans) {
         mArticleListBeans = articleListBeans;
         mContext = context;
     }
@@ -53,7 +49,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public BaseAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         if (i == ITEM_TYPE_HEADER) {
             return new HeaderViewHolder(mHeaderView);
         }
@@ -77,7 +73,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder1, int i) {
+    public void onBindViewHolder(@NonNull BaseAdapter.ViewHolder viewHolder1, int i) {
         if (getItemViewType(i) == ITEM_TYPE_HEADER) {
             return;
         } else {
@@ -106,7 +102,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 viewHolder.mTagNameText.setText(articleListBean.getTags().get(0).getName());
             }
             viewHolder.mTitleText.setText(articleListBean.getTitle());
-            viewHolder.mDateText.setText(articleListBean.getNiceDate());
+            viewHolder.mDateText.setText(articleListBean.getNiceDate() + " " + articleListBean.getAuthor());
             viewHolder.mClassificatfbgion.setText(articleListBean.getSuperChapterName() + "/" + articleListBean.getChapterName());
         }
     }
@@ -123,7 +119,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         return mArticleListBeans.size() + itemCount;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends BaseAdapter.ViewHolder {
 
         @BindView(R.id.title_home_recycle)
         TextView mTitleText;
@@ -140,11 +136,10 @@ public class ArticleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
         }
     }
 
-    public class HeaderViewHolder extends RecyclerView.ViewHolder {
+    public class HeaderViewHolder extends BaseAdapter.ViewHolder {
 
         public HeaderViewHolder(@NonNull View itemView) {
             super(itemView);

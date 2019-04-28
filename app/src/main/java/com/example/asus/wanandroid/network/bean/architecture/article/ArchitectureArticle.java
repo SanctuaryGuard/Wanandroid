@@ -1,6 +1,8 @@
 package com.example.asus.wanandroid.network.bean.architecture.article;
 
-public class ArchitectureArticle {
+import com.example.asus.wanandroid.base.BaseBean;
+
+public class ArchitectureArticle extends BaseBean {
     private ArchitectureArticleData data;
     private int errorCode;
     private String errorMsg;

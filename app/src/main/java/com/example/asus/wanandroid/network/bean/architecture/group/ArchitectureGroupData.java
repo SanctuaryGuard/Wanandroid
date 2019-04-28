@@ -1,8 +1,11 @@
 package com.example.asus.wanandroid.network.bean.architecture.group;
 
+import com.example.asus.wanandroid.base.BaseBean;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class ArchitectureGroupData {
+public class ArchitectureGroupData extends BaseBean {
     private List<ArchitectureGroupData> children;
     private int courseId;
     private int id;

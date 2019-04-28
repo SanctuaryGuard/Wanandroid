@@ -1,4 +1,6 @@
 package com.example.asus.wanandroid.network.bean.architecture.group;
 
-class Children {
+import com.example.asus.wanandroid.base.BaseBean;
+
+class Children extends BaseBean {
 }

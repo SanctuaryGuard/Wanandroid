@@ -1,6 +1,8 @@
 package com.example.asus.wanandroid.network.bean.home.article;
 
-public class HomeArticleTag {
+import com.example.asus.wanandroid.base.BaseBean;
+
+public class HomeArticleTag extends BaseBean {
     private String name;
     private String url;
 

@@ -1,5 +1,7 @@
 package com.example.asus.wanandroid.network.bean.home.banner;
 
+import com.example.asus.wanandroid.base.BaseBean;
+
 /**
  * {"desc":"一起来做个App吧",
  * "id":10,
@@ -11,7 +13,7 @@ package com.example.asus.wanandroid.network.bean.home.banner;
  * "url":"http://www.wanandroid.com/blog/show/2"}
  */
 
-public class HomeBannerData {
+public class HomeBannerData extends BaseBean {
     private String desc;
     private int id;
     private String imagePath;

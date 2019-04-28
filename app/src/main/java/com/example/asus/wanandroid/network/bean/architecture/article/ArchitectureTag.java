@@ -1,4 +1,6 @@
 package com.example.asus.wanandroid.network.bean.architecture.article;
 
-public class ArchitectureTag {
+import com.example.asus.wanandroid.base.BaseBean;
+
+public class ArchitectureTag extends BaseBean {
 }

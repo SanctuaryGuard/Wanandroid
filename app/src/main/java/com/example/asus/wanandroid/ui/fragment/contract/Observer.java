@@ -1,5 +1,7 @@
 package com.example.asus.wanandroid.ui.fragment.contract;
 
+import android.util.Log;
+
 import io.reactivex.disposables.Disposable;
 
 public abstract class Observer<T> implements io.reactivex.Observer<T> {
@@ -16,6 +18,7 @@ public abstract class Observer<T> implements io.reactivex.Observer<T> {
     @Override
     public void onError(Throwable e) {
         onFail(e);
+        Log.i("hell", "observeronerror");
     }
 
     @Override

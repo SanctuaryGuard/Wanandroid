@@ -11,6 +11,8 @@ public class WanandroidApplication extends Application {
         sApplication = this;
     }
 
+
+
     public static WanandroidApplication getApplication() {
         return sApplication;
     }

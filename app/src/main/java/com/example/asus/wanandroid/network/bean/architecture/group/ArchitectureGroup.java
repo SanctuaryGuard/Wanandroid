@@ -1,8 +1,10 @@
 package com.example.asus.wanandroid.network.bean.architecture.group;
 
+import com.example.asus.wanandroid.base.BaseBean;
+
 import java.util.List;
 
-public class ArchitectureGroup {
+public class ArchitectureGroup extends BaseBean {
     private List<ArchitectureGroupData> data;
     private int errorCode;
     private String errorMsg;

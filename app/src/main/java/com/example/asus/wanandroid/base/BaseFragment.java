@@ -29,8 +29,8 @@ public abstract class BaseFragment extends Fragment {
         init();
         if (Build.VERSION.SDK_INT >= 21) {
             View decorView = getActivity().getWindow().getDecorView();
-            decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-            getActivity().getWindow().setStatusBarColor(Color.TRANSPARENT);
+            decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            getActivity().getWindow().setStatusBarColor(getResources().getColor(android.R.color.holo_blue_dark));
         }
         return rootView;
     }

@@ -1,9 +1,11 @@
 package com.example.asus.wanandroid.network.bean.home.banner;
 
+import com.example.asus.wanandroid.base.BaseBean;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeBanner {
+public class HomeBanner extends BaseBean {
 
     private List<HomeBannerData> data = new ArrayList<HomeBannerData>();
     private int errorCode;
